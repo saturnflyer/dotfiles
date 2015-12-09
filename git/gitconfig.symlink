@@ -1,0 +1,73 @@
+[core]
+	excludesfile = ~/.gitignore_global
+  editor = vim
+  whitespace = trailing-space,space-before-tab
+
+[init]
+  templatedir = ~/.git_template
+
+[apply]
+  whitespace = fix
+
+[color]
+  ui = true ;doesnt work for some reason ...
+
+  interactive = true
+  status = true
+  branch = true
+  diff = true
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  br = branch
+  ls = branch
+  s  = status
+  a  = add
+  p  = add -p
+  b  = branch
+  d  = diff
+  dc = diff --cached
+  v  = show
+  l  = log --pretty=oneline
+  ll = log
+  cp = cherry-pick
+  c  = checkout
+  cc = commit
+  ri = rebase -i HEAD~10
+  sh = !git-sh
+  ro = !git fetch origin && git reset --hard origin/master
+  report = log --pretty=format:'%h %ai %cn \n - %s'
+  ok = mergetool
+  whatsup = whatchanged -p --abbrev-commit --pretty=medium
+  creport = log --pretty=format:'%Cred%h %C(bold green)%ai %C(bold blue)%cn \n - %s'
+  myreport = log --pretty=format:'%Cred%h %C(bold green)%ai %C(bold blue)%cn \n - %s' --author='Jim Gay' --branches
+  where = "!f() { git grep -e \"$1\" -F $(git rev-list --all); }; f"
+	added = log --diff-filter=A
+  simple-graph = log --color --date-order --graph --oneline --decorate --simplify-by-decoration --all
+
+[credential]
+  helper = osxkeychain
+
+
+[user]
+  name = 'Jim Gay'
+	email = jim@saturnflyer.com
+[merge]
+	tool = opendiff
+[push]
+	default = simple
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
