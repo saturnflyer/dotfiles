@@ -1,0 +1,22 @@
+for module in `cat ~/.modules`; do
+    module_init_path=$HOME/dotfiles/$module/init.sh
+    if [[ -e $module_init_path ]]; then
+	. $module_init_path
+    fi
+    PATH=$PATH:$HOME/dotfiles/$module/bin
+done
+
+
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
+
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+export TERM=xterm-256color
