@@ -7,9 +7,11 @@ brew 'ag'
 brew 'ruby-install'
 brew 'chruby'
 
+brew 'graphviz'
+
 brew 'heroku-toolbelt'
 
 # OS X Preview plugins
-brew 'qlmarkdown'
-brew 'quicklook-json'
-brew 'quicklook-csv'
+cask 'qlmarkdown'
+cask 'quicklook-json'
+cask 'quicklook-csv'
