@@ -15,3 +15,6 @@ brew 'heroku-toolbelt'
 cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'quicklook-csv'
+
+# GUI
+cask 'gitup'
