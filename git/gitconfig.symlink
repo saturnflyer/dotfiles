@@ -35,6 +35,7 @@
   c  = checkout
   cc = commit
   ri = rebase -i HEAD~10
+  go = rebase --continue
   sh = !git-sh
   ro = !git fetch origin && git reset --hard origin/master
   report = log --pretty=format:'%h %ai %cn \n - %s'
@@ -43,7 +44,7 @@
   creport = log --pretty=format:'%Cred%h %C(bold green)%ai %C(bold blue)%cn \n - %s'
   myreport = log --pretty=format:'%Cred%h %C(bold green)%ai %C(bold blue)%cn \n - %s' --author='Jim Gay' --branches
   where = "!f() { git grep -e \"$1\" -F $(git rev-list --all); }; f"
-	added = log --diff-filter=A
+  added = log --diff-filter=A
   simple-graph = log --color --date-order --graph --oneline --decorate --simplify-by-decoration --all
 
 [credential]
