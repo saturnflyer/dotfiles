@@ -18,3 +18,4 @@ cask 'quicklook-csv'
 
 # GUI
 cask 'gitup'
+cask 'sourcetree'
