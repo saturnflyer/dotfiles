@@ -1,5 +1,8 @@
+[include]
+    path = .gitconfig.custom
+
 [core]
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
   editor = vim
   whitespace = trailing-space,space-before-tab
 
@@ -42,7 +45,6 @@
   ok = mergetool
   whatsup = whatchanged -p --abbrev-commit --pretty=medium
   creport = log --pretty=format:'%Cred%h %C(bold green)%ai %C(bold blue)%cn \n - %s'
-  myreport = log --pretty=format:'%Cred%h %C(bold green)%ai %C(bold blue)%cn \n - %s' --author='Jim Gay' --branches
   where = "!f() { git grep -e \"$1\" -F $(git rev-list --all); }; f"
   added = log --diff-filter=A
   simple-graph = log --color --date-order --graph --oneline --decorate --simplify-by-decoration --all
@@ -51,9 +53,6 @@
   helper = osxkeychain
 
 
-[user]
-  name = 'Jim Gay'
-	email = jim@saturnflyer.com
 [merge]
 	tool = opendiff
 [push]
