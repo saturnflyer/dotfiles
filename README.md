@@ -4,7 +4,9 @@ Clone this repository to your home directory.
 
 It assumes you have homebrew installed (see http://brew.sh)
 
-Be sure to create a file called `.gitconfig.custom` with your configuration.
+Install homebrew-bundle by running `brew tap Homebrew/bundle`
+
+Be sure to create a file called `.gitconfig.custom` with your special git configuration.
 
 For example, here's mine:
 
@@ -15,6 +17,8 @@ For example, here's mine:
 ```
 
 Then run `rake` from within this directory.
+
+And finally run `brew bundle`
 
 ### credit
 
