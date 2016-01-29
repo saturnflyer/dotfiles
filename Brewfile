@@ -6,6 +6,7 @@ tap 'homebrew/bundle'
 brew 'ag'
 brew 'ruby-install'
 brew 'chruby'
+brew 'nvm'
 
 brew 'graphviz'
 
