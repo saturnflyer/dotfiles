@@ -29,6 +29,7 @@ cask 'postgres'
 cask 'gitup'
 cask 'sourcetree'
 cask 'textmate'
+cask 'cyberduck'
 
 # Communication
 cask 'slack'
