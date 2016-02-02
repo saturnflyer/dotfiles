@@ -20,6 +20,7 @@ cask 'quicklook-csv'
 # VM management
 cask 'virtualbox'
 cask 'otto'
+cask 'consul'
 
 # Database
 cask 'postgres'
