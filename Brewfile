@@ -33,3 +33,4 @@ cask 'cyberduck'
 
 # Communication
 cask 'slack'
+cask 'skype'
