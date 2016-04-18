@@ -20,6 +20,8 @@ Then run `rake` from within this directory.
 
 And finally run `brew bundle`
 
+To install python requirements use 'pip install -r python.txt'
+
 ### credit
 
 A good portion of the setup is stolen from https://github.com/peterkeen/dotfiles

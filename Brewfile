@@ -8,6 +8,8 @@ brew 'ruby-install'
 brew 'chruby'
 brew 'nvm'
 
+brew 'python'
+
 brew 'graphviz'
 
 brew 'heroku-toolbelt'
@@ -34,3 +36,6 @@ cask 'cyberduck'
 # Communication
 cask 'slack'
 cask 'skype'
+
+# Books
+cask 'calibre'
