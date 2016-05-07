@@ -14,6 +14,9 @@ brew 'graphviz'
 
 brew 'heroku-toolbelt'
 
+# Java
+cask 'java'
+
 # OS X Preview plugins
 cask 'qlmarkdown'
 cask 'quicklook-json'
@@ -39,3 +42,4 @@ cask 'skype'
 
 # Books
 cask 'calibre'
+brew 'pandoc'
