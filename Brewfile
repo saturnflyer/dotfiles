@@ -1,6 +1,7 @@
 cask_args appdir: '/Applications'
 
 tap 'caskroom/cask'
+tap 'caskroom/versions'
 tap 'homebrew/bundle'
 
 brew 'ag'
@@ -31,9 +32,11 @@ cask 'consul'
 cask 'postgres'
 
 # GUI
+cask 'shiftit'
 cask 'gitup'
 cask 'sourcetree'
 cask 'textmate'
+cask 'sublime-text3'
 cask 'cyberduck'
 
 # Communication
