@@ -40,6 +40,7 @@ cask 'sublime-text3'
 cask 'cyberduck'
 
 # Communication
+cask 'screenhero'
 cask 'slack'
 cask 'skype'
 
