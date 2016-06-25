@@ -6,6 +6,8 @@ for module in `cat ~/.modules`; do
     PATH=$PATH:$HOME/dotfiles/$module/bin
 done
 
+source ~/.secretkeys
+
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
