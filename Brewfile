@@ -3,6 +3,7 @@ cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 tap 'caskroom/versions'
 tap 'homebrew/bundle'
+tap 'codeclimate/formulae'
 
 brew 'ag'
 brew 'ruby-install'
@@ -15,6 +16,8 @@ brew 'graphviz'
 
 brew 'heroku-toolbelt'
 
+brew 'libgit2'
+
 # Java
 cask 'java'
 
@@ -24,9 +27,15 @@ cask 'quicklook-json'
 cask 'quicklook-csv'
 
 # VM management
+cask 'dockertoolbox'
 cask 'virtualbox'
 cask 'otto'
 cask 'consul'
+
+cask 'gpgtools'
+
+# Code
+brew 'codeclimate'
 
 # Database
 cask 'postgres'
