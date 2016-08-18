@@ -32,6 +32,7 @@ cask 'virtualbox'
 cask 'otto'
 cask 'consul'
 
+# Security
 cask 'gpgtools'
 
 # Code
@@ -47,6 +48,7 @@ cask 'sourcetree'
 cask 'textmate'
 cask 'sublime-text3'
 cask 'cyberduck'
+cask 'licecap'
 
 # Communication
 cask 'screenhero'
