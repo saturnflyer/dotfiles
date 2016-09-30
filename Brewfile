@@ -27,9 +27,8 @@ cask 'quicklook-json'
 cask 'quicklook-csv'
 
 # VM management
-cask 'dockertoolbox'
+cask 'docker'
 cask 'virtualbox'
-cask 'otto'
 cask 'consul'
 
 # Security
