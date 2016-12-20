@@ -6,6 +6,7 @@ tap 'homebrew/bundle'
 tap 'codeclimate/formulae'
 
 brew 'ag'
+brew 'gmp'
 brew 'ruby-install'
 brew 'chruby'
 brew 'nvm'
@@ -29,23 +30,24 @@ cask 'quicklook-csv'
 # VM management
 cask 'docker'
 cask 'virtualbox'
-cask 'consul'
 
 # Security
 cask 'gpgtools'
 
 # Code
 brew 'codeclimate'
+brew 'geckodriver'
 
 # Database
 cask 'postgres'
 
 # GUI
+cask 'alfred'
 cask 'shiftit'
 cask 'gitup'
 cask 'sourcetree'
 cask 'textmate'
-cask 'sublime-text3'
+cask 'sublime-text'
 cask 'cyberduck'
 cask 'licecap'
 
