@@ -5,6 +5,7 @@ tap 'caskroom/versions'
 tap 'homebrew/bundle'
 tap 'codeclimate/formulae'
 
+brew 'git'
 brew 'ag'
 brew 'gmp'
 brew 'ruby-install'
