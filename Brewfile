@@ -7,6 +7,7 @@ tap 'codeclimate/formulae'
 
 brew 'git'
 brew 'ag'
+brew 'libyaml'
 brew 'gmp'
 brew 'ruby-install'
 brew 'chruby'
@@ -33,9 +34,11 @@ cask 'docker'
 cask 'virtualbox'
 
 # Security
+cask 'cloak'
 cask 'gpgtools'
 
 # Code
+cask 'dash'
 brew 'codeclimate'
 brew 'geckodriver'
 
