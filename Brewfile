@@ -11,6 +11,7 @@ brew 'libyaml'
 brew 'gmp'
 brew 'ruby-install'
 brew 'chruby'
+brew 'yarn'
 brew 'nvm'
 
 brew 'python'
@@ -41,6 +42,7 @@ cask 'gpgtools'
 cask 'dash'
 brew 'codeclimate'
 brew 'geckodriver'
+cask 'visual-studio-code'
 
 # Database
 cask 'postgres'
