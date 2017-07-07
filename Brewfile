@@ -51,10 +51,12 @@ cask 'postgres'
 cask 'alfred'
 cask 'shiftit'
 cask 'gitkraken'
+cask 'rowanj-gitx'
 cask 'textmate'
 cask 'sublime-text'
 cask 'cyberduck'
 cask 'licecap'
+cask 'iina'
 
 # Communication
 cask 'screenhero'
