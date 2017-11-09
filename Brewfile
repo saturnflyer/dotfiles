@@ -7,6 +7,7 @@ tap 'codeclimate/formulae'
 
 brew 'git'
 brew 'ag'
+brew 'ripgrep'
 brew 'libyaml'
 brew 'gmp'
 brew 'ruby-install'
