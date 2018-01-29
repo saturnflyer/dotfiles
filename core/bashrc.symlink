@@ -6,6 +6,8 @@ for module in `cat ~/.modules`; do
     PATH=$PATH:$HOME/dotfiles/$module/bin
 done
 
+ssh-add -A
+
 source ~/.secretkeys
 
 source /usr/local/share/chruby/chruby.sh
@@ -15,6 +17,7 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 export NVM_DIR=~/.nvm
