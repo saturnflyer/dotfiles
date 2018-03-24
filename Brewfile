@@ -36,7 +36,7 @@ cask 'docker'
 cask 'virtualbox'
 
 # Security
-cask 'cloak'
+cask 'encryptme'
 cask 'gpgtools'
 
 # Code
@@ -60,7 +60,6 @@ cask 'licecap'
 cask 'iina'
 
 # Communication
-cask 'screenhero'
 cask 'slack'
 cask 'skype'
 
