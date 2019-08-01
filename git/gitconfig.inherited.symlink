@@ -61,6 +61,7 @@
   where = "!f() { git grep -e \"$1\" -F $(git rev-list --all); }; f"
   added = log --diff-filter=A
   simple-graph = log --color --date-order --graph --oneline --decorate --simplify-by-decoration --all
+  new = "add $(git ls-files -o --exclude-standard)"
 
 [credential]
   helper = osxkeychain
@@ -70,9 +71,12 @@
 	tool = opendiff
 [push]
 	default = simple
+[pull]
+	rebase = preserve
+	tags = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.1/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

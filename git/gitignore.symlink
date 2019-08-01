@@ -3,3 +3,6 @@
 .\#*
 .DS_Store
 local.vim
+node_modules/*
+.tool-versions
+.tern-project
