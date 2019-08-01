@@ -1,0 +1,70 @@
+for module in `cat ~/.modules`; do
+    module_init_path=$HOME/dotfiles/$module/init.sh
+    if [[ -e $module_init_path ]]; then
+	. $module_init_path
+    fi
+    PATH=$PATH:$HOME/dotfiles/$module/bin
+done
+
+ssh-add -A
+
+source ~/.secretkeys
+
+echo "source /usr/local/share/chruby/chruby.sh"
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+
+export PATH="./bin:/usr/local/sbin:$PATH"
+
+. $HOME/.asdf/asdf.sh
+
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+export PATH="/usr/local/opt/bison/bin:$PATH"
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+
+export EDITOR=mate
+
+export TERM=xterm-256color
+
+number_of_cores=`sysctl -n hw.ncpu`
+alias bundle-speed="bundle config --global jobs `expr $number_of_cores - 1`"
+
+alias rake='noglob rake'
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+# Created by newuser for 5.7.1
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/Users/jim/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# Load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats 'on branch %b'
+
+# Set up the prompt (with git branch name)
+setopt PROMPT_SUBST
+PROMPT='%n in ${PWD/#$HOME/~} ${vcs_info_msg_0_} > '
+
+[[ -e ~/.bash_profile ]] && emulate sh -c 'source ~/.bash_profile'
