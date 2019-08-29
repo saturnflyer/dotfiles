@@ -3,8 +3,11 @@ cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 tap 'caskroom/versions'
 tap 'homebrew/bundle'
+tap 'homebrew/services'
 tap 'codeclimate/formulae'
 
+brew 'bash'
+brew 'zsh'
 brew 'git'
 brew 'ag'
 brew 'ripgrep'
@@ -13,13 +16,14 @@ brew 'gmp'
 brew 'ruby-install'
 brew 'chruby'
 brew 'yarn'
-brew 'nvm'
+brew 'asdf'
+brew 'exa'
 
 brew 'python'
 
 brew 'graphviz'
 
-brew 'heroku-toolbelt'
+brew 'heroku/brew/heroku'
 
 brew 'libgit2'
 
@@ -32,7 +36,6 @@ cask 'quicklook-json'
 cask 'quicklook-csv'
 
 # VM management
-cask 'docker'
 cask 'virtualbox'
 
 # Security
@@ -51,8 +54,7 @@ cask 'postgres'
 # GUI
 cask 'alfred'
 cask 'shiftit'
-cask 'gitkraken'
-cask 'rowanj-gitx'
+cask 'gitx'
 cask 'textmate'
 cask 'sublime-text'
 cask 'cyberduck'
