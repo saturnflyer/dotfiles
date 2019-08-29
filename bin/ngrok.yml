@@ -1,0 +1,9 @@
+tunnels:
+  gotty-shell:
+    proto: http
+    addr: 8080
+    bind_tls: true
+  web:
+    proto: http
+    addr: 3000
+    bind_tls: true
