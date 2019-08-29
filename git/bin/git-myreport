@@ -1,10 +1,11 @@
 #!/bin/bash
 AUTHOR=$(git config user.name)
-echo $AUTHOR
-git log --no-merges --format="%cd" --date=short --since="2 weeks ago" | sort -u -r | while read DATE ; do
+echo "$AUTHOR commits"
+
+git log --no-merges --format="%cd" --date=short --since="6 weeks ago" --branches --author="$AUTHOR" | sort -u -r | while read DATE ; do
     echo
     echo $DATE
-	echo ------------------------
-    GIT_PAGER=cat git log --no-merges --format="%C(auto)%h: %s" --since="$DATE 00:00:00" --until="$DATE 24:00:00"
+  echo ------------------------
+    GIT_PAGER=cat git log --no-merges --format="%C(auto)%h: %s" --since="$DATE 00:00:00" --branches --author="$AUTHOR" --until="$DATE 24:00:00"
 done
 echo
