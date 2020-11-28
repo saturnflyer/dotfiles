@@ -10,6 +10,9 @@ ssh-add -A
 
 source ~/.secretkeys
 
+echo "source /opt/homebrew/share/chruby/chruby.sh"
+source /opt/homebrew/share/chruby/chruby.sh
+source /opt/homebrew/share/chruby/auto.sh
 echo "source /usr/local/share/chruby/chruby.sh"
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
@@ -18,8 +21,15 @@ export PATH="./bin:/usr/local/sbin:$PATH"
 
 . $HOME/.asdf/asdf.sh
 
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+
+export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
+export PATH="/opt/homebrew/opt/bison/bin:$PATH"
+export PATH="/opt/homebrew/opt/openssl/bin:$PATH"
+export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
+export PATH="/opt/homebrew/opt/libxml2/bin:$PATH"
+
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
