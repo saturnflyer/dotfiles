@@ -53,7 +53,7 @@ cask 'postgres'
 
 # GUI
 cask 'alfred'
-cask 'shiftit'
+cask 'hammerspoon'
 cask 'gitx'
 cask 'textmate'
 cask 'sublime-text'
