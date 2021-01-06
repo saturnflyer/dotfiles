@@ -62,6 +62,11 @@
   added = log --diff-filter=A
   simple-graph = log --color --date-order --graph --oneline --decorate --simplify-by-decoration --all
   new = "add $(git ls-files -o --exclude-standard)"
+  # locally (un)ignore files
+  hide = !"git update-index --assume-unchanged"
+  unhide = !"git update-index --no-assume-unchanged"
+  #show ignored files
+  hidden = !"git ls-files -v | grep '^[[:lower:]]'"
 
 [credential]
   helper = osxkeychain
@@ -72,7 +77,7 @@
 [push]
 	default = simple
 [pull]
-	rebase = preserve
+	rebase = merges
 	tags = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
