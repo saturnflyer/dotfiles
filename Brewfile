@@ -1,7 +1,7 @@
 cask_args appdir: '/Applications'
 
-tap 'caskroom/cask'
-tap 'caskroom/versions'
+tap 'homebrew/cask'
+tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 tap 'homebrew/services'
 tap 'codeclimate/formulae'
