@@ -27,34 +27,30 @@ brew 'heroku/brew/heroku'
 
 brew 'libgit2'
 
-# Java
-cask 'java'
-
 # OS X Preview plugins
 cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'quicklook-csv'
 
 # VM management
-cask 'virtualbox'
+# cask 'virtualbox'
 
 # Security
 cask 'encryptme'
-cask 'gpgtools'
+cask 'gpg-suite'
 
 # Code
 cask 'dash'
-brew 'codeclimate'
+# brew 'codeclimate'
 brew 'geckodriver'
 cask 'visual-studio-code'
 
 # Database
-cask 'postgres'
+# cask 'postgres'
 
 # GUI
 cask 'alfred'
 cask 'hammerspoon'
-cask 'gitx'
 cask 'textmate'
 cask 'sublime-text'
 cask 'cyberduck'
@@ -62,8 +58,7 @@ cask 'licecap'
 cask 'iina'
 
 # Communication
-cask 'slack'
-cask 'skype'
+# cask 'slack'
 
 # Books
 cask 'calibre'
