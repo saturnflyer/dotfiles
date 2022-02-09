@@ -6,20 +6,17 @@ for module in `cat ~/.modules`; do
     PATH=$PATH:$HOME/dotfiles/$module/bin
 done
 
-ssh-add -A
+ssh-add --apple-load-keychain
 
 source ~/.secretkeys
 
 echo "source /opt/homebrew/share/chruby/chruby.sh"
 source /opt/homebrew/share/chruby/chruby.sh
 source /opt/homebrew/share/chruby/auto.sh
-echo "source /usr/local/share/chruby/chruby.sh"
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
 
 export PATH="./bin:/usr/local/sbin:$PATH"
 
-. $HOME/.asdf/asdf.sh
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
@@ -28,12 +25,6 @@ export PATH="/opt/homebrew/opt/bison/bin:$PATH"
 export PATH="/opt/homebrew/opt/openssl/bin:$PATH"
 export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 export PATH="/opt/homebrew/opt/libxml2/bin:$PATH"
-
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-export PATH="/usr/local/opt/bison/bin:$PATH"
-export PATH="/usr/local/opt/openssl/bin:$PATH"
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
-export PATH="/usr/local/opt/libxml2/bin:$PATH"
 
 export EDITOR=mate
 
