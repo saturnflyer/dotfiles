@@ -2,9 +2,11 @@ cask_args appdir: '/Applications'
 
 tap 'homebrew/cask'
 tap 'homebrew/cask-versions'
-tap 'homebrew/bundle'
+tap 'homebrew/core'
 tap 'homebrew/services'
 tap 'codeclimate/formulae'
+
+brew 'automake'
 
 brew 'bash'
 brew 'zsh'
@@ -12,23 +14,27 @@ brew 'git'
 brew 'ag'
 brew 'ripgrep'
 brew 'libyaml'
+brew 'libffi'
 brew 'gmp'
+brew 'gdbm'
 brew 'ruby-install'
 brew 'chruby'
 brew 'yarn'
 brew 'asdf'
 brew 'exa'
+brew 'openssl@1.1'
+brew 'readline'
+brew 'redis'
 
 brew 'python'
 
 brew 'graphviz'
 
-brew 'heroku/brew/heroku'
+tap 'heroku/brew'
 
 brew 'libgit2'
 
 # OS X Preview plugins
-cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'quicklook-csv'
 
@@ -63,3 +69,6 @@ cask 'iina'
 # Books
 cask 'calibre'
 brew 'pandoc'
+brew 'librsvg'
+brew 'python'
+cask 'basictex'
