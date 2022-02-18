@@ -67,6 +67,7 @@
   unhide = !"git update-index --no-assume-unchanged"
   #show ignored files
   hidden = !"git ls-files -v | grep '^[[:lower:]]'"
+  force = push --force-with-lease
 
 [credential]
   helper = osxkeychain

@@ -10,6 +10,7 @@ brew 'automake'
 
 brew 'bash'
 brew 'zsh'
+brew 'zsh-syntax-highlighting'
 brew 'git'
 brew 'ag'
 brew 'ripgrep'
