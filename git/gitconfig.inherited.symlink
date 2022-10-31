@@ -68,6 +68,7 @@
   #show ignored files
   hidden = !"git ls-files -v | grep '^[[:lower:]]'"
   force = push --force-with-lease
+  amend = commit --amend
 
 [credential]
   helper = osxkeychain
