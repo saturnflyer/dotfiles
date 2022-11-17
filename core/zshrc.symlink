@@ -8,13 +8,12 @@ done
 
 ssh-add --apple-load-keychain
 
-echo "source /opt/homebrew/share/chruby/chruby.sh"
-source /opt/homebrew/share/chruby/chruby.sh
-source /opt/homebrew/share/chruby/auto.sh
+source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
+source $HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh
 
 export PATH="./bin:/usr/local/sbin:$PATH"
 
-. $(brew --prefix)/opt/asdf/libexec/asdf.sh
+. $(brew --prefix asdf)/libexec/asdf.sh
 
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
