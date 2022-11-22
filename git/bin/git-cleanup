@@ -1,6 +1,7 @@
 #!/bin/bash
-echo "Cleaning up merged branches"
+base="${1:-main}"
 
-git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d
+echo "Cleaning up ${base} merged branches"
+
+git branch --merged "$base" | grep -v "\* $base" | xargs -n 1 git branch -d
 echo
-
