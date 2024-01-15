@@ -1,6 +1,10 @@
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-if [ -f $HOME/.zshenv ]; then
+if [ -f $HOME/.zshrc ]; then
   source $HOME/.zshrc
+fi
+
+if [ -f $HOME/.zenv ]; then
+  source $HOME/.zenv
 fi

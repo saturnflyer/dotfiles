@@ -1,8 +1,6 @@
 cask_args appdir: '/Applications'
 
-tap 'homebrew/cask'
 tap 'homebrew/cask-versions'
-tap 'homebrew/core'
 tap 'homebrew/services'
 tap 'codeclimate/formulae'
 
@@ -22,10 +20,11 @@ brew 'ruby-install'
 brew 'chruby'
 brew 'yarn'
 brew 'asdf'
-brew 'exa'
+brew 'eza'
 brew 'openssl@1.1'
 brew 'readline'
 brew 'redis'
+brew 'visual-studio-code'
 
 brew 'python'
 

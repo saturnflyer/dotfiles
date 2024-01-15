@@ -1,4 +1,6 @@
-for module in `cat ~/.modules`; do
+#! /bin/sh
+
+for module in $(cat ~/.modules); do
     module_init_path=$HOME/dotfiles/$module/init.sh
     if [[ -e $module_init_path ]]; then
 	. $module_init_path
@@ -8,6 +10,7 @@ done
 
 ssh-add --apple-load-keychain
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
 source $HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh
 
@@ -16,12 +19,15 @@ export PATH="./bin:/usr/local/sbin:$PATH"
 . $(brew --prefix asdf)/libexec/asdf.sh
 
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
 export PATH="/opt/homebrew/opt/bison/bin:$PATH"
 export PATH="/opt/homebrew/opt/openssl/bin:$PATH"
 export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 export PATH="/opt/homebrew/opt/libxml2/bin:$PATH"
+
+stty icrnl
 
 export EDITOR=mate
 export LESS="-x2 -eFRX"
