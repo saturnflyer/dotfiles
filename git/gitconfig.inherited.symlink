@@ -10,6 +10,9 @@
 [apply]
   whitespace = fix
 
+[branch]
+  sort = -committerdate
+
 [color]
   ui = always
 
