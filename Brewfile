@@ -1,74 +1,78 @@
-cask_args appdir: '/Applications'
+cask_args appdir: "/Applications"
 
-tap 'homebrew/cask-versions'
-tap 'homebrew/services'
-tap 'codeclimate/formulae'
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "codeclimate/formulae"
 
-brew 'automake'
+brew "automake"
 
-brew 'bash'
-brew 'zsh'
-brew 'zsh-syntax-highlighting'
-brew 'git'
-brew 'ag'
-brew 'ripgrep'
-brew 'libyaml'
-brew 'libffi'
-brew 'gmp'
-brew 'gdbm'
-brew 'ruby-install'
-brew 'chruby'
-brew 'yarn'
-brew 'asdf'
-brew 'eza'
-brew 'openssl@1.1'
-brew 'readline'
-brew 'redis'
-brew 'visual-studio-code'
+brew "bash"
+brew "zsh"
+brew "zsh-syntax-highlighting"
+brew "git"
+cask "gitup"
+brew "ag"
+brew "ripgrep"
+brew "libyaml"
+brew "libffi"
+brew "gmp"
+brew "gdbm"
+brew "ruby-install"
+brew "chruby"
+brew "yarn"
+brew "asdf"
+brew "eza"
+brew "openssl@1.1"
+brew "readline"
+brew "redis"
+brew "visual-studio-code"
 
-brew 'python'
+brew "python"
 
-brew 'graphviz'
+brew "graphviz"
 
-tap 'heroku/brew'
+tap "heroku/brew"
 
-brew 'libgit2'
+brew "libgit2"
 
 # OS X Preview plugins
-cask 'quicklook-json'
-cask 'quicklook-csv'
+cask "quicklook-json"
+cask "quicklook-csv"
 
 # VM management
 # cask 'virtualbox'
 
 # Security
-cask 'encryptme'
-cask 'gpg-suite'
+cask "encryptme"
+cask "gpg-suite"
+brew "pinentry-mac"
 
 # Code
-cask 'dash'
+cask "dash"
 # brew 'codeclimate'
-brew 'geckodriver'
-cask 'visual-studio-code'
+brew "geckodriver"
+cask "visual-studio-code"
 
 # Database
 # cask 'postgres'
 
 # GUI
-cask 'alfred'
-cask 'hammerspoon'
-cask 'textmate'
-cask 'sublime-text'
-cask 'cyberduck'
-cask 'licecap'
-cask 'iina'
+cask "alfred"
+cask "hammerspoon"
+cask "textmate"
+cask "sublime-text"
+cask "cyberduck"
+cask "licecap"
+cask "iina"
 
 # Communication
 # cask 'slack'
 
 # Books
-cask 'calibre'
-brew 'pandoc'
-brew 'librsvg'
-brew 'python'
-cask 'basictex'
+cask "calibre"
+brew "pandoc"
+brew "librsvg"
+brew "python"
+cask "basictex"
