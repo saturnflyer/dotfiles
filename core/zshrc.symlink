@@ -8,7 +8,10 @@ for module in $(cat ~/.modules); do
     PATH=$PATH:$HOME/dotfiles/$module/bin
 done
 
-ssh-add --apple-load-keychain
+# Only load SSH keys in interactive shells
+if [[ $- == *i* ]]; then
+  ssh-add --apple-load-keychain 2>/dev/null
+fi
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
@@ -29,7 +32,7 @@ export PATH="/opt/homebrew/opt/libxml2/bin:$PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
 
-stty icrnl
+[[ -t 0 ]] && stty icrnl
 
 export EDITOR=mate
 export LESS="-x2 -eFRX"
