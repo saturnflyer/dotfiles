@@ -1,7 +1,9 @@
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-if [ -f $HOME/.zshrc ]; then
+# zsh sources .zshrc itself for interactive shells; only pull it in here for
+# non-interactive login shells so it never runs twice.
+if [[ ! -o interactive && -f $HOME/.zshrc ]]; then
   source $HOME/.zshrc
 fi
 # Added by OrbStack: command-line tools and integration
