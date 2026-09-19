@@ -22,7 +22,7 @@ export PATH="./bin:/usr/local/sbin:$PATH"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # Add pg_config
-export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 
 export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
 export PATH="/opt/homebrew/opt/bison/bin:$PATH"
@@ -50,8 +50,6 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
-
 # Created by newuser for 5.7.1
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
@@ -60,7 +58,7 @@ SAVEHIST=1000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Users/jim/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
 compinit
@@ -95,27 +93,20 @@ export PATH="$HOME/rubyonmac:$PATH"
 export QLTY_INSTALL="$HOME/.qlty"
 export PATH="$QLTY_INSTALL/bin:$PATH"
 
-export PATH="/Users/jim/dads-cli":$PATH
-
-
-export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
-export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
-
 # Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/jim/.lmstudio/bin"
+export PATH="$PATH:$HOME/.lmstudio/bin"
 # End of LM Studio CLI section
 
 
-# Added by Windsurf
-export PATH="/Users/jim/.codeium/windsurf/bin:$PATH"
-
 # OrbStack Docker socket
 export DOCKER_HOST="unix://$HOME/.orbstack/run/docker.sock"
-eval "$(/Users/jim/.local/bin/mise activate zsh)"
-eval "$(mise activate zsh)"
+
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate zsh)"
+fi
 
 # Added by Antigravity
-export PATH="/Users/jim/.antigravity/antigravity/bin:$PATH"
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 # GitHub Packages credentials for Bundler (SOFware private gems)
 if command -v gh >/dev/null 2>&1; then
@@ -126,10 +117,11 @@ if command -v gh >/dev/null 2>&1; then
 fi
 
 # Added by Antigravity IDE
-export PATH="/Users/jim/.antigravity-ide/antigravity-ide/bin:$PATH"
+export PATH="$HOME/.antigravity-ide/antigravity-ide/bin:$PATH"
 
 # Go binaries (go install)
 export PATH="$HOME/go/bin:$PATH"
 
-# forge CLI tab completion
-source <(forge completion zsh)
+# Machine-specific customization. Keep this last so it can rely on
+# everything above (mise, compinit) and override it.
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
