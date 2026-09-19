@@ -1,0 +1,50 @@
+#!/bin/bash
+# Runs `claude` through a local Headroom proxy, starting the proxy if it's
+# not already running and stopping it again when claude exits.
+set -euo pipefail
+
+HEADROOM_PORT="${HEADROOM_PORT:-8787}"
+PROXY_URL="http://localhost:${HEADROOM_PORT}"
+PROXY_PID=""
+
+if ! command -v headroom >/dev/null 2>&1; then
+    echo "claude-headroom: 'headroom' not found on PATH." >&2
+    echo "Install it with: uv tool install --python 3.13 \"headroom-ai[proxy]\"" >&2
+    exit 1
+fi
+
+cleanup() {
+    if [ -n "$PROXY_PID" ]; then
+        kill "$PROXY_PID" 2>/dev/null || true
+        wait "$PROXY_PID" 2>/dev/null || true
+    fi
+}
+trap cleanup EXIT INT TERM
+
+if curl -sf -o /dev/null "$PROXY_URL/stats"; then
+    echo "claude-headroom: reusing already-running proxy on port ${HEADROOM_PORT}"
+else
+    echo "claude-headroom: starting proxy on port ${HEADROOM_PORT}"
+    headroom proxy --port "$HEADROOM_PORT" >/tmp/claude-headroom-proxy.log 2>&1 &
+    PROXY_PID=$!
+
+    ready=false
+    for _ in $(seq 1 30); do
+        if curl -sf -o /dev/null "$PROXY_URL/stats"; then
+            ready=true
+            break
+        fi
+        if ! kill -0 "$PROXY_PID" 2>/dev/null; then
+            echo "claude-headroom: proxy exited early, see /tmp/claude-headroom-proxy.log" >&2
+            exit 1
+        fi
+        sleep 0.5
+    done
+
+    if [ "$ready" != true ]; then
+        echo "claude-headroom: proxy did not become ready in time, see /tmp/claude-headroom-proxy.log" >&2
+        exit 1
+    fi
+fi
+
+ANTHROPIC_BASE_URL="$PROXY_URL" claude "$@"
