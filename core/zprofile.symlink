@@ -4,6 +4,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 if [ -f $HOME/.zshrc ]; then
   source $HOME/.zshrc
 fi
+# Added by OrbStack: command-line tools and integration
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+
 
 if [ -f $HOME/.zenv ]; then
   source $HOME/.zenv
