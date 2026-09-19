@@ -30,6 +30,7 @@ brew "redis"
 brew "visual-studio-code"
 
 brew "python"
+brew "uv"
 
 brew "graphviz"
 

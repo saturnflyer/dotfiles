@@ -9,7 +9,11 @@ PROXY_PID=""
 
 if ! command -v headroom >/dev/null 2>&1; then
     echo "claude-headroom: 'headroom' not found on PATH." >&2
-    echo "Install it with: uv tool install --python 3.13 \"headroom-ai[proxy]\"" >&2
+    echo "Install it with:" >&2
+    if ! command -v uv >/dev/null 2>&1; then
+        echo "  brew install uv" >&2
+    fi
+    echo "  uv tool install --python 3.13 \"headroom-ai[proxy]\"" >&2
     exit 1
 fi
 
