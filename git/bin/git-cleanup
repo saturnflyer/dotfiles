@@ -3,5 +3,23 @@ base="${1:-main}"
 
 echo "Cleaning up ${base} merged branches"
 
-git branch --merged "$base" | grep -v "\* $base" | xargs -n 1 git branch -d
+# Strip leading status chars (*, +, spaces) and exclude the base branch itself.
+# git branch --merged uses + for branches checked out in another worktree.
+merged_branches=$(git branch --merged "$base" \
+  | sed 's/^[* +]*//' \
+  | grep -v "^${base}$" \
+  | grep -v "^$")
+
+# Remove worktrees whose branch has been merged
+git worktree list --porcelain | awk '
+  /^worktree / { wt = $2 }
+  /^branch /   { branch = $2; sub("refs/heads/", "", branch); print wt " " branch }
+' | while read -r wt branch; do
+  if echo "$merged_branches" | grep -qx "$branch"; then
+    echo "Removing worktree for merged branch: $branch ($wt)"
+    git worktree remove "$wt" --force
+  fi
+done
+
+echo "$merged_branches" | xargs -n 1 git branch -d
 echo
