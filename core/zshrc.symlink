@@ -7,6 +7,7 @@ for module in $(cat ~/.modules); do
     fi
     PATH=$PATH:$HOME/dotfiles/$module/bin
 done
+PATH=$PATH:$HOME/dotfiles/bin
 
 # Only load SSH keys in interactive shells
 if [[ $- == *i* ]]; then
