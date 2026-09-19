@@ -1,2 +1,1 @@
-
-source ~/.secretkeys
+[ -f ~/.secretkeys ] && source ~/.secretkeys
