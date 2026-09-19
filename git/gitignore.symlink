@@ -6,3 +6,7 @@ local.vim
 node_modules/*
 .tool-versions
 .tern-project
+.agent-os
+**/.claude/settings.local.json
+
+**/.claude/.cc-writes/
